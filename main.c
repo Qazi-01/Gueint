@@ -4,21 +4,30 @@
 
 // main function
 int main(void) {
-    // welcome
     printf("______________________\n");
     printf("\n");
     printf("        GUEINT\n");
     printf("______________________\n");
     printf("\n");
 
-    // initialize the game
     int secret;
     srand(time(NULL));
-    (rand() % 100) + 1;
+    secret = (rand() % 100) + 1;
 
-    // start game
-    // generate a secret integer
-    // get players guess
+    int guess;
+    for (int i = 0; i < 5; i++) {
+        scanf("%i", &guess);
+
+        if (guess > secret) {
+            printf("Lower\n");
+        }
+        else if (guess < secret) {
+            printf("Higher\n");
+        }
+        else {
+            printf("You Won!\n");
+        }
+    }
     // compare ints
     // feedback until correct
     // final result
