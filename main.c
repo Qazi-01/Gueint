@@ -8,7 +8,7 @@ int main(void) {
     printf("              GUEINT\n");
     printf("__________________________________\n");
     printf("\n");
-    printf("You have 7 chances to guess the\nnumber(1-100), make them count!\n");
+    printf("You have 7 attempts to guess the\nnumber(1-100), make them count!\n");
 
     int secret;
     srand(time(NULL));
@@ -24,6 +24,9 @@ int main(void) {
             irtn = scanf("%d", &guess);
 
             if (irtn != 1) {
+                if (irtn == EOF) {
+                    return 1;
+                }
                 while ((ch = getchar()) != '\n' && ch != EOF) {
                 }
             }
@@ -39,7 +42,7 @@ int main(void) {
             printf("Higher\n");
         }
         else {
-            printf("You Won!\n");
+            printf("You Won! :)\n");
             return 0;
         }
     }
