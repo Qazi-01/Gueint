@@ -2,21 +2,27 @@
 #include <stdlib.h>
 #include <time.h>
 
-// main function
 int main(void) {
-    printf("______________________\n");
+    printf("__________________________________\n");
     printf("\n");
-    printf("        GUEINT\n");
-    printf("______________________\n");
+    printf("              GUEINT\n");
+    printf("__________________________________\n");
     printf("\n");
+    printf("You have 7 chances, make\nthem count!\n");
 
     int secret;
     srand(time(NULL));
     secret = (rand() % 100) + 1;
 
     int guess;
-    for (int i = 0; i < 5; i++) {
+    int ch;
+    for (int i = 0; i < 7; i++) {
+        printf("Guess the secret number(%d/7): ", i + 1);
         scanf("%i", &guess);
+        while (guess != 1) {
+            while ((ch = getchar()) != '\n' && ch != EOF) {
+            }
+        }
 
         if (guess > secret) {
             printf("Lower\n");
@@ -26,10 +32,10 @@ int main(void) {
         }
         else {
             printf("You Won!\n");
+            return 0;
         }
     }
-    // compare ints
-    // feedback until correct
-    // final result
+
+    printf("You lost :(\n");
     return 0;
 }
